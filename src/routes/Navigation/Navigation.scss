@@ -1,0 +1,38 @@
+.navigation {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+
+  .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 10px;
+
+    .logo-image {
+      width: 95px;
+      border-radius: 50px;
+    }
+  }
+
+  .nav-links-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .nav-link {
+      padding: 10px 15px;
+      cursor: pointer;
+      font-weight: bold;
+
+      &:hover {
+        border-bottom: 1px solid green;
+      }
+    }
+  }
+}
+
+// width: "120px", padding: "10px", borderRadius: "50px"
