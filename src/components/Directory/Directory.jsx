@@ -1,5 +1,5 @@
-import CategoryItem from "../CategoryItem/CategoryItem";
-import "./Directory.scss";
+import CategoryItem from '../CategoryItem/CategoryItem';
+import './Directory.scss';
 
 const Directory = ({ categories }) => {
   return (
