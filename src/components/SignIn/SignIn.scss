@@ -1,0 +1,83 @@
+.app-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .default-text {
+    color: white;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    width: 500px;
+
+    .input-label {
+      color: #eee;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .input-field {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      background-color: #444;
+      color: #eee;
+
+      font-family: 'Inter', sans-serif;
+
+      &::placeholder {
+        color: #999;
+        font-size: 0.9rem;
+      }
+    }
+    .input-error {
+      outline: 1px solid rgb(255, 72, 72);
+    }
+
+    .error-message {
+      color: rgb(255, 72, 72);
+      font-size: 0.75rem;
+      margin-top: 8px;
+    }
+  }
+
+  .buttons-container {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-sign-in {
+    min-width: 165px;
+    width: auto;
+    height: 50px;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    margin-right: 14px;
+
+    &:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+  }
+}

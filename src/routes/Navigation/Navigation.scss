@@ -3,13 +3,19 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: #161b22;
 
   .logo-container {
     height: 100%;
-    width: 70px;
     padding: 10px;
+
+    &:hover {
+      border-bottom: 1px solid #61dbfb;
+    }
 
     .logo-image {
       width: 130px;
@@ -30,10 +36,8 @@
       cursor: pointer;
 
       &:hover {
-        border-bottom: 1px solid green;
+        border-bottom: 1px solid #61dbfb;
       }
     }
   }
 }
-
-// width: "120px", padding: "10px", borderRadius: "50px"
