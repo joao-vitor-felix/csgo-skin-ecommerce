@@ -3,3 +3,4 @@ export * from '../components/CategoryItemList/CategoryItemList';
 export * from '../components/SignUp/SignUp';
 export * from '../components/SignIn/SignIn';
 export * from '../components/Button/Button';
+export * from '../components/ProductCard/ProductCard';

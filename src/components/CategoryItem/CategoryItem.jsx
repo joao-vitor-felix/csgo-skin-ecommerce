@@ -8,7 +8,6 @@ export const CategoryItem = ({ categories }) => {
         className="background-image"
         style={{
           backgroundImage: `url(${imageUrl})`,
-          backgroundColor: '#0d1117',
         }}
       >
         <div className="category-body-container">

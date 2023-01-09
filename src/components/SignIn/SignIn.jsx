@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form';
 import { isEmail } from 'validator';
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase/firebase.utils';
 
@@ -18,17 +17,12 @@ export const SignIn = () => {
   } = useForm();
 
   const logGoogleUserWithPopup = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const onSubmit = async data => {
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
-        data.email,
-        data.password
-      );
-      console.log(response);
+      await signInAuthUserWithEmailAndPassword(data.email, data.password);
     } catch (error) {
       switch (error.code) {
         case 'auth/wrong-password':
@@ -48,14 +42,14 @@ export const SignIn = () => {
       <h2 className="default-text">Already have an account?</h2>
       <span className="default-text">Sign In with e- mail and password</span>
       <div className="form-group">
-        <label htmlFor="email" className="input-label">
+        <label htmlFor="emailSignIn" className="input-label">
           E-mail
         </label>
         <input
           className={errors?.email ? 'input-field input-error' : 'input-field'}
           type="email"
           placeholder="Your e-mail"
-          id="email"
+          id="emailSignIn"
           {...register('email', {
             required: true,
             validate: value => isEmail(value),
@@ -71,7 +65,7 @@ export const SignIn = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="password" className="input-label">
+        <label htmlFor="passwordSignIn" className="input-label">
           Password
         </label>
         <input
@@ -80,7 +74,7 @@ export const SignIn = () => {
           }
           type="password"
           placeholder="Password"
-          id="password"
+          id="passwordSignIn"
           {...register('password', { required: true, minLength: 7 })}
         />
 

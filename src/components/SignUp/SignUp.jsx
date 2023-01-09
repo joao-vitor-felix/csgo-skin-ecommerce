@@ -21,14 +21,14 @@ export const SignUp = () => {
 
   const onSubmit = async data => {
     try {
+      const userName = {
+        displayName: data.displayName,
+      };
+
       const { user } = await createAuthUserWithEmailAndPassword(
         data.email,
         data.password
       );
-
-      const userName = {
-        displayName: data.displayName,
-      };
 
       await createUserDocumentFromAuth(user, userName);
     } catch (error) {
@@ -63,14 +63,14 @@ export const SignUp = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="email" className="input-label">
+        <label htmlFor="emailSignUp" className="input-label">
           E-mail
         </label>
         <input
           className={errors?.email ? 'input-field input-error' : 'input-field'}
           type="email"
           placeholder="Your e-mail"
-          id="email"
+          id="emailSignUp"
           {...register('email', {
             required: true,
             validate: value => isEmail(value),
@@ -86,7 +86,7 @@ export const SignUp = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="password" className="input-label">
+        <label htmlFor="passwordSignUp" className="input-label">
           Password
         </label>
         <input
@@ -95,7 +95,7 @@ export const SignUp = () => {
           }
           type="password"
           placeholder="Password"
-          id="password"
+          id="passwordSignUp"
           {...register('password', { required: true, minLength: 7 })}
         />
 
