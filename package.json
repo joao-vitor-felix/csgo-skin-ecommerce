@@ -15,7 +15,8 @@
     "react-hook-form": "^7.40.0",
     "react-router-dom": "^6.4.3",
     "sass": "^1.56.1",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",

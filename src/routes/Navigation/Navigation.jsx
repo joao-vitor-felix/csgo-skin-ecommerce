@@ -1,13 +1,18 @@
 import { useContext } from 'react';
-import { UserContext } from '../../contexts/UserContext';
 import { Outlet, Link } from 'react-router-dom';
 import { signUserOut } from '../../utils/firebase/firebase.utils';
+
+import { CartIcon, CardDropDown } from '../../components';
+
+import { UserContext, CartContext } from '../../contexts';
 
 import Logo from '../../assets/CSGO-LOGO-Server-Hosting.webp';
 import './Navigation.scss';
 
 export const Navigation = () => {
   const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
+
   return (
     <>
       <nav className="navigation">
@@ -27,7 +32,9 @@ export const Navigation = () => {
               Sign In
             </Link>
           )}
+          <CartIcon />
         </div>
+        {isCartOpen && <CardDropDown />}
       </nav>
       <Outlet />
     </>
